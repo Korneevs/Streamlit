@@ -1,0 +1,12 @@
+[Unit]
+Description=Streamlit app %i
+After=network.target
+
+[Service]
+WorkingDirectory=/srv/portal/apps/%i/src
+ExecStart=/usr/bin/env bash -lc 'python -m pip install -r ../requirements.txt && streamlit run %h/apps/%i/src/$(yq -r .entry ../app.yaml)   --server.port=$(yq -r .port ../app.yaml)   --server.address=0.0.0.0   --server.headless=true'
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

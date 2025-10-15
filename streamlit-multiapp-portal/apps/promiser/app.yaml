@@ -1,0 +1,6 @@
+slug: promiser
+title: "pROMIser"
+description: "Предсказание эффективности флайта (DTB)"
+icon: "📈"
+port: 8511
+entry: "streamlit_pROMIser.py"

@@ -1,0 +1,6 @@
+slug: matrexa
+title: "MATREXA — оптимизация медиа-планов"
+description: "MILP-оптимизация кампаний и ROMI/DTB"
+icon: "🧮"
+port: 8512
+entry: "streamlit_MATREXA.py"
