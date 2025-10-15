@@ -8,8 +8,6 @@ import plotly.graph_objects as go
 import plotly.express as px
 import pickle
 
-sidebar_nav(active_team="media")
-
 # ----- пути к библиотекам -----
 lib_dir = '/Users/asekorneev/Documents/Work projects/Код'
 if lib_dir not in sys.path:
