@@ -1,0 +1,6 @@
+Name: {file_name}
+Id: {file_id}
+type: {file_type}
+Path: {file_path_by_names}
+Parent name: {parent_name}
+============================
