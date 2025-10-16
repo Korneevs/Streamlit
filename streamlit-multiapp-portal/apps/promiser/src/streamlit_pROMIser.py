@@ -387,8 +387,8 @@ if not cfg:
 with st.spinner("Считаем предсказание..."):
     # Подключения создаём только здесь — после клика
     c_engine, t_engine = connect_dwh(password)
-    df = pd.read_excel('/Users/asekorneev/Documents/Work projects/Код/df_for_pROMIser.xlsx')
-    with open('/Users/asekorneev/Documents/Work projects/Код/flight_trp_dict.pkl', 'rb') as f:
+    df = pd.read_excel('/home/asekorneev/streamlit-portal/Streamlit/streamlit-multiapp-portal/apps/promiser/src/df_for_pROMIser.xlsx')
+    with open('/home/asekorneev/streamlit-portal/Streamlit/streamlit-multiapp-portal/apps/promiser/src/flight_trp_dict.pkl', 'rb') as f:
         flight_trp_dict = pickle.load(f)
 
     if cfg["mode"] == "New":
