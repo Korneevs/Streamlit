@@ -9,19 +9,21 @@ import plotly.express as px
 import pickle
 
 # ----- пути к библиотекам -----
-lib_dir = '/Users/asekorneev/Documents/Work projects/Код'
+lib_dir = '/home/asekorneev/streamlit-portal/Streamlit/streamlit-multiapp-portal/apps/promiser/src'
 if lib_dir not in sys.path:
     sys.path.append(lib_dir)
 from pROMIser_for_one_flight import pROMIser_t
-from password import password
 
-lib_dir = '/Users/asekorneev/Downloads/Lib'
+lib_dir = '/home/asekorneev/streamlit-portal/Streamlit/Lib'
 if lib_dir not in sys.path:
     sys.path.append(lib_dir)
 from Google.googlya import Googlya
 from Google.TableParser import GoogleSheetsParser
 import bxtools.clickhouse as clickhouse
 import bxtools.trino as trino
+
+import os
+password = os.getenv("DWH_PASSWORD")
 
 # ----- DWH connectors -----
 def connect_dwh(password):
@@ -32,7 +34,7 @@ def connect_dwh(password):
 def visualize_ci_prediction(ci, actual_df=None, *, streamlit_container=None,
                             title=None, flight_name=None):
     """
-    Рисует предсказание(я) с 95% CI-лентой и фактическими точками.
+    Рисует предсказание(я) с 80% CI-лентой и фактическими точками.
 
     Parameters
     ----------
