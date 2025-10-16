@@ -58,8 +58,8 @@ class pROMIser_t:
         self.seen_curves = None
         self.df = df
         self.data_to_predict = data_to_predict
-        token_path = "/Users/asekorneev/Documents/Work projects/Доки для кода/token.json"
-        credentials_path = "/Users/asekorneev/Documents/Work projects/Доки для кода/client_secret_298388933431-9i3edv4spo4r4qro3cdo8l9u891hvgrp.apps.googleusercontent.com.json"
+        token_path = "/home/asekorneev/streamlit-portal/Streamlit/streamlit-multiapp-portal/apps/promiser/src/token.json"
+        credentials_path = "/home/asekorneev/streamlit-portal/Streamlit/streamlit-multiapp-portal/apps/promiser/src/client_secret_298388933431-9i3edv4spo4r4qro3cdo8l9u891hvgrp.apps.googleusercontent.com.json"
 
         self.parser = GoogleSheetsParser(token_path=token_path,
                             credentials_path=credentials_path)
@@ -178,7 +178,7 @@ class pROMIser_t:
 
     def get_seen_array(self):
         if self.seen_curves is None:
-            with open('/Users/asekorneev/Documents/Work projects/Доки для кода/curves_mean.pickle', 'rb') as handle:
+            with open('/home/asekorneev/streamlit-portal/Streamlit/streamlit-multiapp-portal/apps/promiser/src/curves_mean.pickle', 'rb') as handle:
                 self.seen_curves = pickle.load(handle)
         return self.seen_curves[self.question]
     
