@@ -20,9 +20,10 @@ import sys
 import re
 from tqdm.notebook import tqdm
 import numpy as np
-from password import password
+import os
 from datetime import date
 
+password = os.getenv("DWH_PASSWORD")
 
 class pROMIser_t:
     def __init__(self,
