@@ -6,7 +6,7 @@ import streamlit as st
 import plotly.express as px
 import sys
 
-lib_dir = '/Users/asekorneev/Downloads/Lib'
+lib_dir = '/home/asekorneev/streamlit-portal/Streamlit/Lib'
 if lib_dir not in sys.path:
     sys.path.append(lib_dir)
 from media.DatasetWorker.DatasetCreator import DatasetCreator
