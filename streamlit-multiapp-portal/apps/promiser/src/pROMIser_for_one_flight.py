@@ -1,4 +1,3 @@
-from TableParser import GoogleSheetsParser
 import plotly.graph_objects as go
 import pandas as pd
 import streamlit as st
@@ -10,6 +9,7 @@ lib_dir = '/home/asekorneev/streamlit-portal/Streamlit/Lib'
 if lib_dir not in sys.path:
     sys.path.append(lib_dir)
 from media.DatasetWorker.DatasetCreator import DatasetCreator
+from Google.TableParser import GoogleSheetsParser
 import numpy as np
 import plotly as plt
 import pickle
