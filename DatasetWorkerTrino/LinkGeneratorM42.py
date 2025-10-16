@@ -1,0 +1,33 @@
+from media.DatasetWorkerTrino.IdNamesCorrespondenceM42 import IdNamesCorrespondenceM42
+from bxtools.trino import TrinoEngine
+from typing import List
+
+
+class LinkGeneratorM42():
+
+    #class dependencies
+    idNamesCorrespondenceM42 = IdNamesCorrespondenceM42
+
+    @classmethod
+    def get_link(cls, vertical: List[str], logical_category: List[str], 
+                 target_regions: List[str], metrics: List[str], engine: TrinoEngine):
+        
+        reg_ids = cls.idNamesCorrespondenceM42.regions_to_id(target_regions, engine)
+        reg_ids = ','.join([str(id) for id in reg_ids])
+        log_ids = cls.idNamesCorrespondenceM42.logical_categories_to_id(logical_category, engine)
+        log_ids = ','.join([str(id) for id in log_ids])
+        vertical_ids = cls.idNamesCorrespondenceM42.verticals_to_id(vertical, engine)
+        vertical_ids = ','.join([str(id) for id in vertical_ids])
+        metric_ids = cls.idNamesCorrespondenceM42.metrics_to_ids(metrics, engine)
+        metric_ids = ','.join([str(id) for id in metric_ids])
+
+        link = f"""
+        https://ab.k.avito.ru/metrics/m42/?
+            logical_category={log_ids}        &
+            metric={metric_ids}               &
+            region={reg_ids}                  &
+            report=main                       &
+            sum_by=logical_category,region    &
+            vertical={vertical_ids}
+        """
+        return link
